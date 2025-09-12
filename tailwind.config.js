@@ -1,14 +1,25 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-    content: [
+  content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
+    "node_modules/flowbite-react/**/*.js", // Add Flowbite React components
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        "pulse-slow": "pulseScale 2s ease-in-out infinite",
+      },
+      keyframes: {
+        pulseScale: {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.1)" },
+        },
+      },
+    },
   },
   plugins: [
-    require('daisyui'),
+    require("flowbite/plugin"), // Flowbite plugin
+    // require('daisyui'), // optional if you also want DaisyUI
   ],
-}
-
+};
