@@ -3,7 +3,7 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-    "node_modules/flowbite-react/**/*.js", // Add Flowbite React components
+    "node_modules/flowbite-react/**/*.js", 
   ],
   theme: {
     extend: {
@@ -19,7 +19,7 @@ export default {
     },
   },
   plugins: [
-    require("flowbite/plugin"), // Flowbite plugin
-    // require('daisyui'), // optional if you also want DaisyUI
+    require("flowbite/plugin"), 
+    require("daisyui"),          
   ],
 };

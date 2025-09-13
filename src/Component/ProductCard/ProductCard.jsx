@@ -37,7 +37,9 @@ export default function ProductCard({ product }) {
        <Link to="/productDetails">
         <button className="p-3 bg-green-600 text-white rounded-full shadow"><ShoppingCart size={18} /></button>
        </Link>
+       <Link to="/wishlist">
         <button className="p-3 bg-white border rounded-full"><Heart size={18} /></button>
+       </Link>
       </div>
     </div>
   );

@@ -24,7 +24,7 @@ const Navbar = () => {
   return (
     <div className="w-full border-b border-gray-200">
       {/* Top Bar */}
-      <div className="bg-[#f1f5f1] text-sm text-gray-600 py-2 px-4">
+      {/* <div className="bg-[#f1f5f1] text-sm text-gray-600 py-2 px-4">
         <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
           <span className="text-center sm:text-left">
             📍 Store Location: Lincoln- 344, Illinois, Chicago, USA
@@ -38,7 +38,42 @@ const Navbar = () => {
             </span>
           </div>
         </div>
+      </div> */}
+        <div className="bg-[#f1f5f1] text-sm text-gray-600 py-2 px-4">
+      <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+        <span className="text-center sm:text-left">
+          📍 Store Location: Lincoln- 344, Illinois, Chicago, USA
+        </span>
+
+        <div className="flex items-center space-x-4">
+
+          {/* Language Dropdown */}
+          <div className="relative group">
+            <button className="flex items-center gap-1 px-2 py-1 rounded hover:bg-green-100 transition">
+              Eng <FaAngleDown className="transition-transform duration-200 group-hover:rotate-180 text-xs" />
+            </button>
+            <div className="absolute right-0 mt-1 w-20 bg-white shadow-lg rounded hidden group-hover:block">
+              <div className="px-3 py-1 hover:bg-green-50 cursor-pointer">Eng</div>
+              <div className="px-3 py-1 hover:bg-green-50 cursor-pointer">Spa</div>
+              <div className="px-3 py-1 hover:bg-green-50 cursor-pointer">Fra</div>
+            </div>
+          </div>
+
+          {/* Currency Dropdown */}
+          <div className="relative group">
+            <button className="flex items-center gap-1 px-2 py-1 rounded hover:bg-green-100 transition">
+              USD <FaAngleDown className="transition-transform duration-200 group-hover:rotate-180 text-xs" />
+            </button>
+            <div className="absolute right-0 mt-1 w-20 bg-white shadow-lg rounded hidden group-hover:block">
+              <div className="px-3 py-1 hover:bg-green-50 cursor-pointer">USD</div>
+              <div className="px-3 py-1 hover:bg-green-50 cursor-pointer">EUR</div>
+              <div className="px-3 py-1 hover:bg-green-50 cursor-pointer">GBP</div>
+            </div>
+          </div>
+
+        </div>
       </div>
+    </div>
 
       {/* Main Navbar */}
       <nav className="bg-white px-4 py-3 shadow-sm">
