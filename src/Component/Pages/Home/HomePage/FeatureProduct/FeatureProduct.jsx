@@ -1,12 +1,10 @@
-
-import { FaStar, FaHeart, FaShoppingBag } from "react-icons/fa";
+import { FaStar, FaHeart, FaShoppingBag, FaEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 import Apple from "../../../../../assets/sabbirassets/a/Apple.png";
 import Cabbage from "../../../../../assets/sabbirassets/a/Cabbage.png";
 import Capsicum from "../../../../../assets/sabbirassets/a/Capsicum.png";
 import Finger from "../../../../../assets/sabbirassets/a/Finger.png";
-
 
 const products = [
   {
@@ -17,7 +15,6 @@ const products = [
     image: Apple,
     rating: 4,
     isOnSale: true,
-    isHighlighted: true,
   },
   {
     id: 2,
@@ -45,7 +42,7 @@ const products = [
 
 const FeatureProduct = () => {
   return (
-    <div className="py-12 px-4 md:px-16">
+    <div className="container mx-auto py-12 px-4 md:px-16">
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-2xl font-semibold">Featured Products</h2>
@@ -62,7 +59,7 @@ const FeatureProduct = () => {
         {products.map((product) => (
           <div
             key={product.id}
-            className={`relative border rounded-lg p-4 bg-white transition hover:shadow-md ${
+            className={`relative border rounded-lg p-4 bg-white transition group overflow-hidden hover:shadow-lg ${
               product.isSelected ? "border-green-500" : "border-gray-200"
             }`}
           >
@@ -73,9 +70,14 @@ const FeatureProduct = () => {
               </div>
             )}
 
-            {/* Wishlist icon */}
-            <div className="absolute top-3 right-3 text-gray-400 hover:text-red-500 cursor-pointer">
-              <FaHeart />
+            {/* Action Icons */}
+            <div className="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition">
+              <button className="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow hover:bg-green-100">
+                <FaHeart className="text-gray-600 text-sm" />
+              </button>
+              <button className="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow hover:bg-green-100">
+                <FaEye className="text-gray-600 text-sm" />
+              </button>
             </div>
 
             {/* Product image */}
@@ -115,7 +117,7 @@ const FeatureProduct = () => {
             </div>
 
             {/* Cart Icon */}
-            <div className="absolute bottom-4 right-4 w-7 h-7 flex items-center justify-center bg-gray-200 hover:bg-green-500 hover:text-white text-gray-600 rounded-full transition">
+            <div className="absolute bottom-4 right-4 w-8 h-8 flex items-center justify-center bg-gray-200 text-gray-600 rounded-full hover:bg-green-500 hover:text-white transition">
               <FaShoppingBag size={14} />
             </div>
           </div>

@@ -26,7 +26,7 @@ const features = [
 
 const ServiceHighlights = () => {
   return (
-    <div className="w-full py-12 px-4 md:px-16 bg-white">
+    <div className="container mx-auto py-12 px-4 bg-white">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
         {features.map((feature, idx) => (
           <div key={idx} className="flex flex-col items-center gap-3">

@@ -27,7 +27,7 @@ const categories = [
 
 const TopCategories = () => {
   return (
-    <div className="py-12 px-4 md:px-16 bg-white">
+    <div className="container mx-auto py-12 px-4 md:px-16 bg-white">
       {/* Header */}
       <div className="flex justify-between items-center my-10">
         <h2 className="text-2xl font-semibold">Shop by Top Categories</h2>
