@@ -7,10 +7,10 @@ import {
   FaRegCalendarAlt,
 } from "react-icons/fa";
 
-import singleBlogImage from "../../../../assets/blogsImage/singleBlog/Image (10).png";
-import singleBlogImage1 from "../../../../assets/blogsImage/singleBlog/image (11).png";
-import singleBlogImage2 from "../../../../assets/blogsImage/singleBlog/Image (12).png";
-import singleBlogImage3 from "../../../../assets/blogsImage/singleBlog/Rectangle 51.png";
+import singleBlogImage from "../../../../assets/blogsImage/singleBlog/Image 0.png";
+import singleBlogImage1 from "../../../../assets/blogsImage/singleBlog/image11.png";
+import singleBlogImage2 from "../../../../assets/blogsImage/singleBlog/image12.png";
+import singleBlogImage3 from "../../../../assets/blogsImage/singleBlog/rectangle51.png";
 import FilterSidebar from "../FilterSidebar/FilterSidebar";
 import { SlCalender } from "react-icons/sl";
 
