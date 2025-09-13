@@ -1,12 +1,8 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { ChevronDown, ChevronUp, Star } from "lucide-react";
 
-/**
- * Props:
- * - products: array
- * - filters: object
- * - setFilters: fn
- */
+
+ 
 export default function Sidebar({ products, filters, setFilters }) {
   const [open, setOpen] = useState({
     categories: true,

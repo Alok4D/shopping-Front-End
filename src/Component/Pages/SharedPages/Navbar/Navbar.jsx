@@ -8,8 +8,7 @@ import {
 } from "react-icons/fi";
 import { FaAngleDown } from "react-icons/fa";
 import navLogo from "../../../../assets/navLogo/plant 1.png";
-import { Link } from "react-router-dom";
-
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -69,7 +68,10 @@ const Navbar = () => {
           {/* Desktop Nav (Large screen) */}
           <div className="hidden lg:flex items-center justify-center flex-1 mx-10">
             <ul className="flex space-x-6 font-medium text-gray-700 relative">
-              <li className="cursor-pointer hover:text-green-700">Home</li>
+              <NavLink to="/">
+                {" "}
+                <li className="cursor-pointer hover:text-green-700">Home</li>
+              </NavLink>
 
               {/* Shop dropdown only on large screens */}
               <li
@@ -79,11 +81,11 @@ const Navbar = () => {
                 Shop <FaAngleDown className="ml-1 text-xs" />
                 {shopDropdownOpen && (
                   <ul className="absolute top-full left-0 mt-2 w-40 bg-white shadow-md rounded-md z-20">
-                   <Link to="/productDetails">
-                    <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                       Products Details
-                    </li>
-                   </Link>
+                    <Link to="/productDetails">
+                      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                        Products Details
+                      </li>
+                    </Link>
                     <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
                       Categories
                     </li>
@@ -116,25 +118,9 @@ const Navbar = () => {
               </li>
 
               {/* Blog dropdown only on large screens */}
-              <li
-                className="relative cursor-pointer flex items-center hover:text-green-700"
-                onClick={() => setBlogDropdownOpen(!blogDropdownOpen)}
-              >
-                Blog <FaAngleDown className="ml-1 text-xs" />
-                {blogDropdownOpen && (
-                  <ul className="absolute top-full left-0 mt-2 w-40 bg-white shadow-md rounded-md z-20">
-                    <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                      Latest Posts
-                    </li>
-                    <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                      Categories
-                    </li>
-                    <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                      Archives
-                    </li>
-                  </ul>
-                )}
-              </li>
+                <NavLink to="/blog">
+                <li className="cursor-pointer hover:text-green-700">Blog</li>
+              </NavLink>
 
               <li className="cursor-pointer hover:text-green-700">About Us</li>
             </ul>
@@ -147,18 +133,23 @@ const Navbar = () => {
               <span className="text-base">(219) 555-0114</span>
             </div>
             <FiSearch className="cursor-pointer hover:text-green-700" />
-            <FiHeart className="cursor-pointer hover:text-green-700" />
-            <div className="relative cursor-pointer hover:text-green-700">
+            <Link to="/wishlist">
+              <FiHeart className="cursor-pointer hover:text-green-700" />
+            </Link>
+            <Link
+              to="/shoppingCart"
+              className="relative cursor-pointer hover:text-green-700"
+            >
               <FiShoppingBag />
               <span className="absolute -top-2 -right-2 bg-green-600 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
                 0
               </span>
-            </div>
-               <div className="border-2">
-                <Link to="/signIn">
+            </Link>
+            <div className="border-2">
+              <Link to="/signIn">
                 <FiUser className="cursor-pointer hover:text-green-700" />
-                </Link>
-              </div>
+              </Link>
+            </div>
           </div>
         </div>
 
@@ -166,7 +157,10 @@ const Navbar = () => {
         {menuOpen && (
           <div className="lg:hidden mt-4 px-4 pb-4">
             <ul className="space-y-2 text-gray-700 font-medium mb-4">
-              <li className="cursor-pointer hover:text-green-700">Home</li>
+              <NavLink to="/">
+                {" "}
+                <li className="cursor-pointer hover:text-green-700">Home</li>
+              </NavLink>
               {/* Shop dropdown only on large screens */}
               <li
                 className="relative cursor-pointer flex items-center hover:text-green-700"
@@ -210,25 +204,9 @@ const Navbar = () => {
               </li>
 
               {/* Blog dropdown only on large screens */}
-              <li
-                className="relative cursor-pointer flex items-center hover:text-green-700"
-                onClick={() => setBlogDropdownOpen(!blogDropdownOpen)}
-              >
-                Blog <FaAngleDown className="ml-1 text-xs" />
-                {blogDropdownOpen && (
-                  <ul className="absolute top-full left-0 mt-2 w-40 bg-white shadow-md rounded-md z-20">
-                    <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                      Latest Posts
-                    </li>
-                    <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                      Categories
-                    </li>
-                    <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                      Archives
-                    </li>
-                  </ul>
-                )}
-              </li>
+                <NavLink to="/blog">
+                <li className="cursor-pointer hover:text-green-700">Blog</li>
+              </NavLink>
               <li className="cursor-pointer hover:text-green-700">About Us</li>
             </ul>
             <div className="flex flex-wrap gap-4 text-gray-700 text-xl">
@@ -246,7 +224,7 @@ const Navbar = () => {
               </div>
               <div>
                 <Link to="/signIn">
-                <FiUser className="cursor-pointer hover:text-green-700" />
+                  <FiUser className="cursor-pointer hover:text-green-700" />
                 </Link>
               </div>
             </div>
