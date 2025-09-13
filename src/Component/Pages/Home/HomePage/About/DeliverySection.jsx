@@ -15,7 +15,7 @@ const DeliverySection = () => {
           consectetur velit dapibus eu. Mauris sollicitudin dignissim diam, ac
           mattis eros accumsan rhoncus. Curabitur auctor bibendum nunc eget
           elementum.
-        </p>
+        </p>  
         <ul className="mb-6">
           <li className="flex items-center space-x-3 text-gray-600">
             <FaCheckCircle className="text-green-500" size={18} />
