@@ -12,6 +12,7 @@ import Checkout from "../Checkout/Checkout";
 import BlogPage from "../Pages/Blog/BlogPage/BlogPage";
 import SingleBlog from "../Pages/Blog/SingleBlog/SingleBlog";
 import ShopPage from "../Pages/ShopPage/ShopPage";
+import About from "../Pages/Home/HomePage/About/About";
 
 export const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ export const router = createBrowserRouter([
       {
         path: '/singleBlog',
         element: <SingleBlog/>
+      },
+      {
+        path: '/aboutUS',
+        element: <About/>
       }
     ],
   },

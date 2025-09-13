@@ -1,6 +1,6 @@
-// src/components/HeroSection.jsx
-import React from "react";
-import farmer1 from "../../assets/about/Image (6).png"; // Use your images accordingly
+
+
+import farmer1 from "../../../../../assets/sabbirassets/about/Image (6).png"; // Use your images accordingly
 
 const HeroSection = () => {
   return (

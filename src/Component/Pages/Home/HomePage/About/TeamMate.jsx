@@ -1,9 +1,9 @@
-import React from "react";
+
 import { FaChevronLeft, FaChevronRight, FaTwitter, FaFacebookF, FaGithub } from "react-icons/fa";
-import JennyWilson from '../../assets/about/Jenny Wilson.png' 
-import JaneCooper from '../../assets/about/Jane Cooper.png' 
-import CodyFisher from '../../assets/about/Cody Fisher.png' 
-import RobertFox from '../../assets/about/Robert Fox.png' 
+import JennyWilson from '../../../../../assets/sabbirassets/about/Jenny Wilson.png' 
+import JaneCooper from '../../../../../assets/sabbirassets/about/Jane Cooper.png' 
+import CodyFisher from '../../../../../assets/sabbirassets/about/Cody Fisher.png' 
+import RobertFox from '../../../../../assets/sabbirassets/about/Robert Fox.png' 
 
 const TeamMate = () => {
   return (

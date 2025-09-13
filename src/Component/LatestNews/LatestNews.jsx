@@ -1,4 +1,4 @@
-import React from "react";
+
 import { FaRegHeart, FaUser, FaComments, FaArrowRight } from "react-icons/fa";
 
 import Image1 from "../../../src/assets/sabbirassets/TopCategories/Image (2).png";

@@ -1,10 +1,10 @@
-import React from 'react';
-import HeroSection from './HeroSection';
-import FeaturesSection from './FeaturesSection';
-import DeliverySection from './DeliverySection';
-import TeamMate from './TeamMate';
-import ClientTestimonial from './ClientTestimonial';
-import NewsletterSubscribe from '../../Component/NewsletterSubscribe ';
+import LatestNews from "../../../../LatestNews/LatestNews";
+import ClientTestimonial from "./ClientTestimonial";
+import DeliverySection from "./DeliverySection";
+import FeaturesSection from "./FeaturesSection";
+import HeroSection from "./HeroSection";
+import TeamMate from "./TeamMate";
+
 
 const About = () => {
     return (
@@ -14,7 +14,7 @@ const About = () => {
         <DeliverySection></DeliverySection>
         <TeamMate></TeamMate>
         <ClientTestimonial></ClientTestimonial>
-        <NewsletterSubscribe></NewsletterSubscribe>
+        <LatestNews></LatestNews>
       </>
     );
 };

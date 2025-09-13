@@ -1,8 +1,8 @@
-import React from "react";
 import { FaStar, FaQuoteLeft } from "react-icons/fa";
-import JennyWilson from '../../assets/about/Jenny Wilson.png' 
-import JaneCooper from '../../assets/about/Jane Cooper.png' 
-import CodyFisher from '../../assets/about/Cody Fisher.png' 
+
+import JennyWilson from "../../../../../assets/sabbirassets/about/Jenny Wilson.png";
+import JaneCooper from "../../../../../assets/sabbirassets/about/Jane Cooper.png";
+import CodyFisher from "../../../../../assets/sabbirassets/about/Cody Fisher.png";
 
 const ClientTestimonial = () => {
   return (

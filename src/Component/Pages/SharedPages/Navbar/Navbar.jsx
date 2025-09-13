@@ -15,7 +15,7 @@ const navItems = [
   { name: "Shop", path: "/shops" },
   { name: "Pages", path: "/pages" },
   { name: "Blog", path: "/blog" },
-  { name: "About Us", path: "/about" },
+  { name: "About Us", path: "/aboutUS" },
 ];
 
 const Navbar = () => {
@@ -23,22 +23,7 @@ const Navbar = () => {
 
   return (
     <div className="w-full border-b border-gray-200">
-      {/* Top Bar */}
-      {/* <div className="bg-[#f1f5f1] text-sm text-gray-600 py-2 px-4">
-        <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-          <span className="text-center sm:text-left">
-            📍 Store Location: Lincoln- 344, Illinois, Chicago, USA
-          </span>
-          <div className="flex items-center space-x-4">
-            <span className="cursor-pointer hover:text-green-700">
-              Eng <FaAngleDown className="inline ml-1" />
-            </span>
-            <span className="cursor-pointer hover:text-green-700">
-              USD <FaAngleDown className="inline ml-1" />
-            </span>
-          </div>
-        </div>
-      </div> */}
+    
         <div className="bg-[#f1f5f1] text-sm text-gray-600 py-2 px-4">
       <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
         <span className="text-center sm:text-left">
