@@ -7,7 +7,7 @@ This project is developed **only for the Frontend UI**.
 
 ## 🔗 Live Site
 
-👉 **Visit Here:** [https://ecobazar-ten.vercel.app/](https://your-live-site.vercel.app)
+👉 **Visit Here:** [Live Link(https://ecobazar-ten.vercel.app/)]
 
 ---
 
