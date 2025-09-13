@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import {
   ShoppingCart,
   Heart,
@@ -134,9 +134,11 @@ export default function ProductDetails() {
               min={1}
               className="w-16 border rounded-lg text-center py-2"
             />
+           <Link to="/shoppingCart">
             <button className="flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition">
               <ShoppingCart size={18} /> Add to Cart
             </button>
+           </Link>
             <button className="p-3 border rounded-lg hover:bg-gray-100">
               <Heart size={18} />
             </button>
