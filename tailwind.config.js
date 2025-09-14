@@ -16,6 +16,9 @@ export default {
           "50%": { transform: "scale(1.1)" },
         },
       },
+       fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+      },
     },
   },
   plugins: [

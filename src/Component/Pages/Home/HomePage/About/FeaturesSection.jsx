@@ -14,43 +14,42 @@ import farmer4 from "../../../../../assets/sabbirassets/about/Image (7).png";
 
 const FeaturesSection = () => {
   return (
-    <div className="grid md:grid-cols-2 gap-10 items-center px-5 md:px-20 py-10 bg-base-100">
+    <div className="container grid items-center gap-10 px-5 py-10 mx-auto md:grid-cols-2 md:px-20 bg-base-100">
       
       {/* Left Image Area */}
-      <div className="relative w-full h-full flex items-center justify-center">
+      <div className="relative flex items-center justify-center w-full h-full">
         
         {/* Background Image */}
         <img
           src={farmer3}
           alt="Background"
-          className="w-full h-auto object-cover rounded-lg opacity-40"
+          className="object-cover w-full h-auto rounded-lg opacity-40"
         />
 
         {/* Foreground Image */}
         <img
           src={farmer4}
           alt="Farmer"
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
-                     w-4/6 sm:w-3/8 md:w-2/3  rounded-lg z-10"
+          className="absolute z-10 w-4/6 transform -translate-x-1/2 -translate-y-1/2 rounded-lg top-1/2 left-1/2 sm:w-3/8 md:w-2/3"
         />
       </div>
 
       {/* Right Text Area */}
       <div>
-        <h2 className="text-3xl font-bold mb-4">
+        <h2 className="mb-4 text-3xl font-bold">
           100% Trusted <br />
           <span className="text-green-600">Organic Food Store</span>
         </h2>
-        <p className="text-gray-600 mb-4">
+        <p className="mb-4 text-gray-600">
           Pellentesque a ante vulputate leo porttitor luctus sed eget eros.
           Nulla et rhoncus neque. Duis non diam eget est luctus tincidunt a a
           mi. Nulla eu eros consequat tortor tincidunt feugiat.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
        {/* Feature 1 */}
           <div className="flex items-center space-x-4">
-            <div className="text-green-500 text-base bg-green-100 p-3 rounded-full">
+            <div className="p-3 text-base text-green-500 bg-green-100 rounded-full">
               <FaLeaf />
             </div>
             <div>
@@ -63,7 +62,7 @@ const FeaturesSection = () => {
 
           {/* Feature 2 */}
           <div className="flex items-start space-x-4">
-            <div className="text-green-500 text-base bg-green-100 p-3 rounded-full">
+            <div className="p-3 text-base text-green-500 bg-green-100 rounded-full">
               <FaHeadset />
             </div>
             <div>
@@ -74,7 +73,7 @@ const FeaturesSection = () => {
 
           {/* Feature 3 */}
           <div className="flex items-start space-x-4">
-            <div className="text-green-500 text-base bg-green-100 p-3 rounded-full">
+            <div className="p-3 text-base text-green-500 bg-green-100 rounded-full">
               <FaStar />
             </div>
             <div>
@@ -85,7 +84,7 @@ const FeaturesSection = () => {
 
           {/* Feature 4 */}
           <div className="flex items-start space-x-4">
-            <div className="text-green-500 text-base bg-green-100 p-3 rounded-full">
+            <div className="p-3 text-base text-green-500 bg-green-100 rounded-full">
               <FaLock />
             </div>
             <div>
@@ -98,7 +97,7 @@ const FeaturesSection = () => {
 
           {/* Feature 5 */}
           <div className="flex items-start space-x-4">
-            <div className="text-green-500 text-base bg-green-100 p-3 rounded-full">
+            <div className="p-3 text-base text-green-500 bg-green-100 rounded-full">
               <FaShippingFast />
             </div>
             <div>
@@ -111,7 +110,7 @@ const FeaturesSection = () => {
 
           {/* Feature 6 */}
           <div className="flex items-start space-x-4">
-            <div className="text-green-500 text-base bg-green-100 p-3 rounded-full">
+            <div className="p-3 text-base text-green-500 bg-green-100 rounded-full">
               <FaCube />
             </div>
             <div>

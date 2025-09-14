@@ -2,9 +2,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Link } from "react-router-dom";
 
-import banner1 from "../../../../../assets/banner-logo/best-vegetable-grow-in-greenhouse-scaled.jpeg.webp";
-import banner2 from "../../../../../assets/banner-logo/blog-large-2020veg.jpg";
-import banner3 from "../../../../../assets/banner-logo/fresh-organic-vegetable_114106-1589.jpg";
+import banner1 from "../../../../../assets/banner-logo/Image.png";
+import banner2 from "../../../../../assets/banner-logo/Image.png";
+import banner3 from "../../../../../assets/banner-logo/Image.png";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -56,36 +56,36 @@ const Banner = () => {
         >
           {slides.map((slide) => (
             <SwiperSlide key={slide.id}>
-              <div className="flex flex-col md:flex-row items-center justify-between px-6 md:px-20 py-14 md:py-20">
+              <div className="flex flex-col items-center justify-between px-6 md:flex-row md:px-20 py-14 md:py-20">
                 {/* Image Section */}
-                <div className="w-full md:w-1/2 flex justify-center">
+                <div className="flex justify-center w-full md:w-1/2">
                   <img
                     src={slide.image}
                     alt={`Slide ${slide.id}`}
-                    className="w-full max-w-lg object-contain drop-shadow-md"
+                    className="object-contain w-full max-w-lg drop-shadow-md"
                   />
                 </div>
 
                 {/* Text Content */}
-                <div className="w-full md:w-1/2 text-center md:text-left space-y-5">
-                  <h4 className="text-green-600 font-semibold uppercase tracking-wide">
+                <div className="w-full space-y-5 text-center md:w-1/2 md:text-left">
+                  <h4 className="font-semibold tracking-wide text-green-600 uppercase">
                     Welcome to Shopery
                   </h4>
-                  <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-snug">
+                  <h1 className="text-4xl font-extrabold leading-snug text-gray-900 md:text-6xl">
                     {slide.title} <br />{" "}
                     <span className="text-black">{slide.subtitle}</span>
                   </h1>
-                  <p className="text-lg md:text-xl text-gray-600">
+                  <p className="text-lg text-gray-600 md:text-xl">
                     Sale up to{" "}
-                    <span className="text-orange-500 font-bold">
+                    <span className="font-bold text-orange-500">
                       {slide.discount}
                     </span>
                   </p>
-                  <p className="text-sm md:text-base text-gray-500">
+                  <p className="text-sm text-gray-500 md:text-base">
                     {slide.description}
                   </p>
                   <Link to={"#"}>
-                    <button className="bg-green-500 text-white px-7 py-3 rounded-full hover:bg-green-600 transition duration-300 flex items-center gap-2 mx-auto md:mx-0">
+                    <button className="flex items-center gap-2 py-3 mx-auto text-white transition duration-300 bg-green-500 rounded-full px-7 hover:bg-green-600 md:mx-0">
                       Shop Now <span className="text-lg">→</span>
                     </button>
                   </Link>
