@@ -11,7 +11,7 @@ const Review = () => {
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-10 bg-[url('https://www.toptal.com/designers/subtlepatterns/patterns/dots.png')]"></div>
 
-      <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 container mx-auto">
+      <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 container mx-auto">
         {stats.map((item) => (
           <div
             key={item.id}
