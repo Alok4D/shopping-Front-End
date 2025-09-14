@@ -14,7 +14,11 @@ import SingleBlog from "../Pages/Blog/SingleBlog/SingleBlog";
 import ShopPage from "../Pages/ShopPage/ShopPage";
 import About from "../Pages/Home/HomePage/About/About";
 import ContactUs from "../Pages/ContactUs/ContactUs";
-
+import DashboardLayout from '../../Component/Layout/DashboardLayout/DashboardLayout'
+import UserDashboard from "../Pages/Dashboard/UserDashboard/UserDashboard";
+import OrderHistory from "../Pages/Dashboard/UserDashboard/OderHistory";
+import OrderDetails from "../Pages/Dashboard/UserDashboard/OrderDetails";
+import Settings from "../Pages/Dashboard/UserDashboard/Settings";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -68,7 +72,42 @@ export const router = createBrowserRouter([
       {
         path: '/contactUs',
         element: <ContactUs/>
-      }
+      },
+        // Dashboard route
+      {
+        path: "/",
+        element: <DashboardLayout></DashboardLayout>,
+        children: [
+          {
+            path: "/Dashboard",
+            element: <UserDashboard></UserDashboard>,
+          },
+          {
+            path: "/order-history",
+            element: <OrderHistory></OrderHistory>,
+          },
+          {
+            path: "/order-details",
+            element: <OrderDetails></OrderDetails>,
+          },
+          {
+            path: "/settings",
+            element: <Settings></Settings>,
+          },
+          {
+            path: "/wishlist",
+            element: <Wishlist></Wishlist>,
+          },
+          {
+            path: "/shoppingCart",
+            element: <ShoppingCart></ShoppingCart>,
+          },
+          {
+            path: "/checkout",
+            element: <Checkout></Checkout>,
+          },
+        ],
+      },
     ],
   },
 ]);
