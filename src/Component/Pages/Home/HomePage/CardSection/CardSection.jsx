@@ -5,7 +5,7 @@ import Image2 from "../../../../../assets/sabbirassets/TopCategories/Image1.png"
 const CardSection = () => {
   return (
     <section className="py-10 px-4 md:px-8 lg:px-16 bg-white">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className=" grid grid-cols-1 md:grid-cols-2 gap-6">
 
         {/* --- Card 1 --- */}
         <div

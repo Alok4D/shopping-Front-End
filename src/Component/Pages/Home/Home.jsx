@@ -1,4 +1,3 @@
-
 import BestSeller from "../../BestSeller/BestSeller";
 import LatestNews from "../../LatestNews/LatestNews";
 import Banner from "./HomePage/Banner/Banner";
@@ -14,17 +13,21 @@ import Trusted from "./HomePage/Trusted/Trusted";
 const Home = () => {
   return (
     <div>
-      <Banner/>
-      <ServiceHighlights/>
-      <FeatureProduct/>
-      <TopCategories/>
-      <Trusted/>
-      <Review/>
-      <CardSection/>
-      <BestSeller/>
-      <LatestNews/>
-      <Testimonial/>
-      <Contact/>
+      <Banner />
+      <div className="container mx-auto">
+        <ServiceHighlights />
+        <FeatureProduct />
+        <TopCategories />
+        <Trusted />
+      </div>
+      <Review />
+      <div className="container mx-auto">
+        <CardSection />
+        <BestSeller />
+        <LatestNews />
+        <Testimonial />
+        <Contact />
+      </div>
     </div>
   );
 };
