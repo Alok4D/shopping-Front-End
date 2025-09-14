@@ -2,7 +2,7 @@ import { FaSearch, FaRegBookmark } from "react-icons/fa";
 
 const RightSidebar = () => {
   return (
-    <div className="hidden lg:block w-1/4 border-red-400 border-2 px-6 py-6 bg-gray-100 shadow-md rounded-lg">
+    <div className="hidden lg:block w-full lg:w-1/4 border-red-400 border-2 px-6 py-6 bg-gray-100 shadow-md rounded-lg">
       {/* Search Field */}
       <div className="mb-6">
         <div className="relative">

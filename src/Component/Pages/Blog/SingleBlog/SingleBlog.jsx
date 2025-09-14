@@ -16,9 +16,9 @@ import { SlCalender } from "react-icons/sl";
 
 const SingleBlog = () => {
   return (
-    <div className="container mx-auto mt-4 pb-6 px-4 gap-4 flex">
+    <div className="flex flex-col-reverse sm:flex-col md:flex-row lg:flex-row container mx-auto mt-4 pb-6 px-4 gap-4">
       {/* Main Blog Content */}
-      <div className="container mx-auto py-6 px-4">
+      <div className="container mx-auto py-6 px-4 w-full">
         {/* Blog Post Header */}
         <div className="mb-6">
           <img
@@ -113,7 +113,7 @@ const SingleBlog = () => {
             mus.
           </p>
           {/* Left and Right Images with Text */}
-          <div className="flex justify-between gap-4">
+          <div className="flex justify-between gap-4 pt-5">
             <div className="w-full lg:w-1/2">
               <img
                 src={singleBlogImage1}

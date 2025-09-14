@@ -12,36 +12,37 @@ import blogImage8 from "../../../../../src/assets/blogsImage/Image (8).png";
 const BlogPage = () => {
   return (
     <div className="container mx-auto py-6">
-      <div className="flex justify-between ml-[25%] mb-6">
-        {/* Left Section: Sort By */}
-        <div className="w-1/4 lg:w-[20%] mb-4 lg:mb-0">
-          <div className="flex items-center space-x-2">
-            <label htmlFor="sort" className="font-semibold text-sm">
-              Sort by :
-            </label>
-            <select
-              id="sort"
-              className="border border-gray-300 p-2 rounded-md text-sm"
-            >
-              <option value="latest">Latest</option>
-              <option value="oldest">Oldest</option>
-              <option value="most_comments">Most Comments</option>
-            </select>
-          </div>
-        </div>
+    <div className="flex flex-col sm:flex-row justify-between items-center mb-4 px-4 sm:px-0">
+  {/* Left Section: Sort By */}
+  <div className="w-full sm:w-1/2 lg:w-1/4 mb-4 sm:mb-0">
+    <div className="flex items-center space-x-2">
+      <label htmlFor="sort" className="font-semibold text-sm whitespace-nowrap">
+        Sort by:
+      </label>
+      <select
+        id="sort"
+        className="border border-gray-300 p-2 rounded-md text-sm w-full sm:w-auto"
+      >
+        <option value="latest">Latest</option>
+        <option value="oldest">Oldest</option>
+        <option value="most_comments">Most Comments</option>
+      </select>
+    </div>
+  </div>
 
-        {/* Right Section: Results */}
-        <div className="w-1/4 lg:w-1/6 text-right mb-4 lg:mb-0">
-          <span className="text-[#00B207]">52 Results Found</span>
-        </div>
-      </div>
+  {/* Right Section: Results */}
+  <div className="w-full sm:w-1/2 lg:w-1/6 text-center sm:text-right">
+    <span className="text-[#00B207] font-semibold">52 Results Found</span>
+  </div>
+</div>
 
-      <div className="flex">
+
+      <div className="flex flex-col sm:flex-col md:flex-row lg:flex-row">
         {/* Left Sidebar (Filter) */}
         <FilterSidebar />
 
         {/* Right Section (Blog Cards) */}
-        <div className="w-full md:w-3/4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pl-6">
+        <div className="w-full  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-3 gap-6">
           <BlogCard
             image={blogImage1}
             category="Food"

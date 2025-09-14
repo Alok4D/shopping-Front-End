@@ -2,7 +2,7 @@ import { FiCalendar, FiFilter, FiSearch } from "react-icons/fi";
 
 const FilterSidebar = () => {
   return (
-    <div className="w-full h-[50%] md:w-1/4 bg-white px-6 pb-6 shadow-md rounded-lg border-1">
+    <div className="w-full h-[50%] lg:w-1/4 bg-white px-6 pb-6 shadow-md rounded-lg border-1 mb-6 mr-6">
       {/* Filter Button */}
       <button className="w-full text-center bg-green-500 text-white py-2 px-4 rounded-md mb-6 flex items-center justify-center space-x-2">
         <FiFilter className="text-white" />
