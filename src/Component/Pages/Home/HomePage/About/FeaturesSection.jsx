@@ -43,7 +43,7 @@ const FeaturesSection = () => {
           mi. Nulla eu eros consequat tortor tincidunt feugiat.
         </p>
 
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 py-2 lg:grid-cols-3">
           {/* Feature 1 */}
           <div className="flex items-center space-x-4">
             <div className="p-3 text-base text-green-500 bg-green-100 rounded-full">
@@ -80,7 +80,7 @@ const FeaturesSection = () => {
           </div>
 
           {/* Feature 4 */}
-          <div className="flex items-start space-x-4">
+          <div className="flex items-start space-x-4 mt-3">
             <div className="p-3 text-base text-green-500 bg-green-100 rounded-full">
               <FaLock />
             </div>
@@ -93,7 +93,7 @@ const FeaturesSection = () => {
           </div>
 
           {/* Feature 5 */}
-          <div className="flex items-start space-x-4">
+          <div className="flex items-start space-x-4 mt-3">
             <div className="p-3 text-base text-green-500 bg-green-100 rounded-full">
               <FaShippingFast />
             </div>
@@ -106,8 +106,8 @@ const FeaturesSection = () => {
           </div>
 
           {/* Feature 6 */}
-          <div className="flex items-start space-x-4">
-            <div className="p-3 text-base text-green-500 bg-green-100 rounded-full">
+          <div className="flex items-start space-x-4 mt-3">
+            <div className="p-3 text-base text-green-500 bg-green-100 rounded-full ">
               <FaCube />
             </div>
             <div>

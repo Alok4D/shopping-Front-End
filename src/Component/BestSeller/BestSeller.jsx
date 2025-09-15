@@ -130,7 +130,7 @@ const renderStars = (rating) =>
       </span>
     ));
 
-const BestSellerProducts = () => {
+const BestSeller = () => {
   return (
     <section className="py-10 lg:px-0 px-6">
       {/* Header */}
@@ -367,4 +367,4 @@ const BestSellerProducts = () => {
   );
 };
 
-export default BestSellerProducts;
+export default BestSeller;

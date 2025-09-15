@@ -20,37 +20,37 @@ const testimonials = [
     img: JaneCooper,
     name: "Jane Cooper",
     role: "E-commerce Seller",
-    text: "Using this service has been a game-changer for my online store. Sales are up, and customer trust is higher than ever.",
+    text: "This platform revolutionized our feedback process with its intuitive design, allowing us to reply to customers faster and with more accuracy.",
   },
   {
     img: CodyFisher,
     name: "Cody Fisher",
     role: "Product Designer",
-    text: "I love how seamless everything feels. From navigation to user experience, this platform does it all with elegance.",
+    text: "The system has simplified our workflow by offering a smooth interface, helping our team respond to clients faster and more effectively.",
   },
   {
     img: JennyWilson,
     name: "Amelia Hart",
     role: "Freelance Developer",
-    text: "I’ve been using it for months now — the performance is consistent and support is super responsive. Highly recommended!",
+    text: "Using this platform, we now manage customer feedback with greater ease, and our overall service response time has improved drastically.",
   },
   {
     img: JaneCooper,
     name: "Liam Johnson",
     role: "Startup Founder",
-    text: "This is one of those tools you didn’t know you needed until you used it. Our team is more efficient and focused.",
+    text: "This tool provided us with the structure we needed to organize feedback better, ensuring customer issues are resolved much more quickly.",
   },
   {
     img: CodyFisher,
     name: "Sophia Lee",
     role: "UI/UX Expert",
-    text: "A clean interface and smooth interactions make this platform stand out from the rest. Loved it from day one!",
+    text: "We’ve experienced a noticeable improvement in client communication since adopting this solution, which has made our support team efficient.",
   },
   {
     img: JennyWilson,
     name: "Noah Martinez",
     role: "Content Creator",
-    text: "I’m amazed at how this helped me engage better with my audience. Their feedback module is top-notch.",
+    text: "The platform’s interface feels simple yet powerful, allowing our staff to work faster, manage issues, and deliver great customer service.",
   },
 ];
 

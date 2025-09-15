@@ -20,7 +20,7 @@ export default function HomeOutFooter() {
   };
 
   return (
-    <footer className="w-full bg-[#111111] text-gray-300 relative overflow-hidden mt-7">
+    <footer className="w-full bg-[#111111] text-gray-300 relative overflow-hidden">
       <div className="relative z-10">
         <section className="w-full bg-[#f7f7f7] py-6 px-6">
           <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-6">

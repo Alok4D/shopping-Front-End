@@ -8,7 +8,7 @@ import contact6 from "../../../../../assets/contact/Group (1).png";
 
 const Contact = () => {
   return (
-    <div className="w-full py-12 bg-[#FFFFFF] border">
+    <div className="w-full py-12 bg-[#FFFFFF]">
       {/* Logo Section */}
       <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 mb-12 opacity-80 text-gray-400">
         {[contact1, contact2, contact3, contact4, contact5, contact6].map(
