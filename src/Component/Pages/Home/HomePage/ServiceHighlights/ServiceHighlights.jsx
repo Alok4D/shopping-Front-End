@@ -1,5 +1,4 @@
-// ServiceHighlights.jsx
-import React from 'react';
+
 import { FaShippingFast, FaHeadset, FaLock, FaUndo } from 'react-icons/fa';
 
 const ServiceHighlights = () => {

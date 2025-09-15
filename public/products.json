@@ -1,6 +1,8 @@
 [
   {"id":1,"name":"Big Potato","price":14.99,"oldPrice":null,"image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrSQzhr_pVXl6ggkSNi5J0LouLAwzxMnzwCw&s","rating":4.5,"category":"Vegetables","tags":["Healthy"],"status":"available"},
+  
   {"id":2,"name":"Chinese Cabbage","price":24.00,"oldPrice":30.00,"image":"https://www.realsimple.com/thmb/zc5Bus25odoGqWuyXWLJOa76sgI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Carrots-Healthiest-Veg-GettyImages-471359531-501f20d1a8cf4ad5b51b55b84066acd1.jpg","rating":5,"category":"Vegetables","tags":["Low Fat","Vegetarian"],"status":"available"},
+
   {"id":3,"name":"Ladies Finger","price":14.99,"oldPrice":20.00,"image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7-IF7gRS5XrkYayVeKmFIJXZO5yG-_w6eqA&s","rating":4,"category":"Vegetables","tags":["Kid Foods"],"status":"out-of-stock"},
   {"id":4,"name":"Green Apple","price":12.99,"oldPrice":null,"image":"https://media.istockphoto.com/id/1058023252/photo/pumpkin-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=VYFBd-A2d-zPNP4DWPMz-PUBIDP96cQUHqyq15-TOaA=","rating":4.2,"category":"Fruits","tags":["Healthy"],"status":"available"},
   {"id":5,"name":"Red Capsicum","price":32.00,"oldPrice":50.00,"image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTTQEXwCWLl8XZgmZrxt7pSmWIt6UnYvUM6A&s","rating":4.8,"category":"Vegetables","tags":["Sale"],"status":"available"},

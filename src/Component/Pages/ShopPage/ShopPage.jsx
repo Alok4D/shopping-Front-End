@@ -78,32 +78,35 @@ export default function ShopPage() {
         <Sidebar products={products} filters={filters} setFilters={setFilters} />
 
         <main>
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
-            <div>
-              <h1 className="text-2xl font-bold">Vegetables</h1>
-              <div className="text-sm text-gray-500">{filtered.length} Results Found</div>
-            </div>
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+  {/* Title & Result Count */}
+  <div className="w-full sm:w-auto">
+    <h1 className="text-2xl font-bold">Vegetables</h1>
+    <div className="text-sm text-gray-500">{filtered.length} Results Found</div>
+  </div>
 
-            <div className="flex items-center gap-3">
-              <input
-                type="search"
-                placeholder="Search products..."
-                value={filters.q}
-                onChange={(e) => setFilters(prev => ({ ...prev, q: e.target.value }))}
-                className="border rounded px-3 py-2"
-              />
+  {/* Search & Sort */}
+  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full sm:w-auto">
+    <input
+      type="search"
+      placeholder="Search products..."
+      value={filters.q}
+      onChange={(e) => setFilters(prev => ({ ...prev, q: e.target.value }))}
+      className="border rounded px-3 py-2 w-full sm:w-auto"
+    />
 
-              <select
-                value={filters.sort}
-                onChange={(e) => setFilters(prev => ({ ...prev, sort: e.target.value }))}
-                className="border rounded px-3 py-2"
-              >
-                <option value="latest">Latest</option>
-                <option value="price-asc">Price: Low to High</option>
-                <option value="price-desc">Price: High to Low</option>
-              </select>
-            </div>
-          </div>
+    <select
+      value={filters.sort}
+      onChange={(e) => setFilters(prev => ({ ...prev, sort: e.target.value }))}
+      className="border rounded px-3 py-2 w-full sm:w-auto"
+    >
+      <option value="latest">Latest</option>
+      <option value="price-asc">Price: Low to High</option>
+      <option value="price-desc">Price: High to Low</option>
+    </select>
+  </div>
+</div>
+
 
           <ProductGrid products={filtered} />
         </main>

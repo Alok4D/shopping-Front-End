@@ -2,7 +2,7 @@ import { useState } from "react";
 import ProductCard from "../ProductCard/ProductCard";
 
 export default function ProductGrid({ products }) {
-  const itemsPerPage = 20;
+  const itemsPerPage = 12;
   const [currentPage, setCurrentPage] = useState(1);
 
   // total pages
@@ -20,7 +20,7 @@ export default function ProductGrid({ products }) {
   return (
     <div>
       {/* grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {currentProducts.map((p) => (
           <ProductCard key={p.id} product={p} />
         ))}

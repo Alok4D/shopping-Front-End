@@ -1,14 +1,11 @@
+import { useParams } from "react-router-dom";
 import { useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import {
-  ShoppingCart,
-  Heart,
-  CheckCircle2,
-  Share2,
-  Facebook,
-  Twitter,
-  Linkedin,
-} from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
+import { ShoppingCart, Heart, CheckCircle2 } from "lucide-react";
+import { FaChevronCircleDown, FaChevronCircleUp } from "react-icons/fa";
 
 const product = {
   id: 1,
@@ -20,8 +17,12 @@ const product = {
   sku: "254964",
   reviews: 4,
   brand: "Fresh Farm",
-  image:
+  images: [
     "https://visitokinawajapan.com/wp-content/themes/visit-okinawa_multi-language/lang/en/assets/img/discover/133/di133_kv_okinawan-island-vegetables.webp",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlItdunKKrV-8fQutsMrMnVLuRdWpUOuA7-g&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGMsreLavs85BsvcYp7ctra4eumvdwSBckzg&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGMsreLavs85BsvcYp7ctra4eumvdwSBckzg&s",
+  ],
   description:
     "Sed commodo aliquam dui ut porta. Fusce felis felis, imperdiet ut posuere a, viverra ut mauris. Maecenas tincidunt ligula in sem vestibulum pharetra. Maecenas auctor tortor lacus, et tristique mi fermentum sit amet.",
   tags: ["Vegetables", "Healthy", "Chinese Cabbage", "Green Cabbage"],
@@ -62,133 +63,160 @@ const product = {
 export default function ProductDetails() {
   const { id } = useParams();
   const [activeTab, setActiveTab] = useState("description");
+  const [selectedImage, setSelectedImage] = useState(product.images[0]);
 
   return (
-    <div className="max-w-7xl mx-auto p-6">
-      {/* Top Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-        {/* Product Image */}
-        <div className="flex flex-col items-center">
-          <img
-            src={product.image}
-            alt={product.name}
-            className="rounded-xl w-[350px] h-[280px] object-contain"
-          />
-          <div className="flex gap-3 mt-4">
-            {[1, 2, 3].map((i) => (
-              <img
-                key={i}
-                src={product.image}
-                alt="thumb"
-                className="w-20 h-20 border rounded-lg object-cover cursor-pointer hover:border-green-500"
-              />
-            ))}
+    <div className="container mx-auto p-4 sm:p-6 md:p-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-4 md:py-8">
+        {/* Left: Image Slider */}
+        <div className="flex flex-col md:flex-row gap-4">
+          {/* Thumbnail Slider */}
+          <div className="flex md:flex-col items-center w-full md:w-20">
+            <div className="cursor-pointer mb-2 md:mb-0 md:mb-2">
+              <FaChevronCircleUp className="text-black text-2xl" />
+            </div>
+            <Swiper
+              direction="vertical"
+              slidesPerView={4}
+              spaceBetween={8}
+              navigation={{
+                nextEl: ".swiper-button-next-vertical",
+                prevEl: ".swiper-button-prev-vertical",
+              }}
+              modules={[Navigation]}
+              className="h-40 md:h-96 w-full md:w-auto"
+            >
+              {product.images.map((img, idx) => (
+                <SwiperSlide key={idx}>
+                  <img
+                    src={img}
+                    alt={`thumb-${idx}`}
+                    onClick={() => setSelectedImage(img)}
+                    className={`w-full md:h-20 object-contain border rounded cursor-pointer transition-all ${
+                      selectedImage === img
+                        ? "border-green-500"
+                        : "border-gray-200 hover:border-blue-400"
+                    }`}
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+            <div className="cursor-pointer mt-2 md:mt-2">
+              <FaChevronCircleDown className="text-black text-2xl" />
+            </div>
+          </div>
+
+          {/* Main Image */}
+          <div className="flex-1 flex items-center justify-center">
+            <img
+              src={selectedImage}
+              alt="product"
+              className="max-h-[300px] sm:max-h-[350px] md:max-h-[400px] object-contain border rounded-lg"
+            />
           </div>
         </div>
 
-        {/* Product Info */}
+        {/* Right: Product Info */}
         <div>
-          <h2 className="text-2xl font-bold text-gray-800">{product.name}</h2>
-          <div className="flex items-center gap-3 mt-2">
-            <span className="text-yellow-500">⭐⭐⭐⭐</span>
-            <span className="text-sm text-gray-500">
-              {product.reviews} Reviews
-            </span>
+          <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">
+            {product.name}
+          </h2>
+
+          {/* Rating + SKU */}
+          <div className="flex flex-wrap items-center gap-2 mt-2">
+            <div className="flex items-center text-yellow-400">
+              {"★".repeat(4)}
+              <span className="text-sm text-gray-600 ml-2">
+                {product.reviews} Review
+              </span>
+            </div>
             <span className="text-sm text-gray-500">SKU: {product.sku}</span>
-            <span className="text-sm text-green-600 font-medium">
+            <span className="bg-green-100 text-green-600 text-xs px-2 py-1 rounded">
               {product.status}
             </span>
           </div>
 
           {/* Price */}
-          <div className="mt-4 flex items-center gap-3">
-            <span className="text-2xl font-bold text-green-600">
-              ${product.price.toFixed(2)}
-            </span>
-            <span className="line-through text-gray-400">
+          <div className="mt-4 flex flex-wrap items-center gap-2">
+            <span className="line-through text-gray-400 text-lg">
               ${product.oldPrice.toFixed(2)}
             </span>
-            <span className="bg-red-500 text-white px-2 py-1 text-sm rounded">
-              {product.discount}% Off
+            <span className="text-2xl sm:text-3xl font-bold text-green-600">
+              ${product.price.toFixed(2)}
+            </span>
+            <span className="ml-2 text-red-500 font-semibold text-sm">
+              {Math.round(
+                ((product.oldPrice - product.price) / product.oldPrice) * 100
+              )}
+              % Off
             </span>
           </div>
 
-          {/* Brand & Share */}
-          <div className="mt-4 flex items-center gap-5">
-            <p className="text-sm">
-              Brand: <span className="font-medium">{product.brand}</span>
-            </p>
-            <div className="flex items-center gap-2">
-              <Share2 size={16} className="text-gray-500" />
-              <Facebook size={16} className="cursor-pointer text-blue-600" />
-              <Twitter size={16} className="cursor-pointer text-sky-500" />
-              <Linkedin size={16} className="cursor-pointer text-blue-800" />
-            </div>
+          {/* Brand */}
+          <div className="mt-4 flex items-center gap-2">
+            <span className="font-medium">Brand:</span>
+            <img
+              src={product.images[0]}
+              alt=""
+              className="h-8 w-8 sm:h-10 sm:w-10 rounded-md"
+            />
           </div>
 
-          {/* Add to Cart */}
-          <div className="flex items-center gap-4 mt-6">
-            <input
-              type="number"
-              defaultValue={1}
-              min={1}
-              className="w-16 border rounded-lg text-center py-2"
-            />
-           <Link to="/shoppingCart">
-            <button className="flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition">
+          {/* Description */}
+          <p className="mt-4 text-gray-600 leading-relaxed">
+            {product.description}
+          </p>
+
+          {/* Quantity & Add to Cart */}
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3 mt-6">
+            <div className="flex items-center border rounded">
+              <button className="px-2 sm:px-3 py-1 sm:py-2 text-lg">-</button>
+              <span className="px-3 sm:px-4">1</span>
+              <button className="px-2 sm:px-3 py-1 sm:py-2 text-lg">+</button>
+            </div>
+            <button className="flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-green-600 text-white rounded hover:bg-green-700">
               <ShoppingCart size={18} /> Add to Cart
             </button>
-           </Link>
-            <button className="p-3 border rounded-lg hover:bg-gray-100">
-              <Heart size={18} />
+            <button className="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center border rounded-full hover:bg-gray-100">
+              <Heart size={20} className="text-gray-600" />
             </button>
           </div>
 
           {/* Category & Tags */}
-          <div className="mt-6 text-sm text-gray-600">
+          <div className="mt-6 text-sm text-gray-500">
             <p>
-              Category: <span className="font-medium">Vegetables</span>
+              <span className="font-medium">Category:</span> Vegetables
             </p>
-            <p className="mt-2">Tags: {product.tags.join(", ")}</p>
+            <p>
+              <span className="font-medium">Tags:</span>{" "}
+              {product.tags.join(", ")}
+            </p>
           </div>
         </div>
       </div>
 
       {/* Tabs Section */}
       <div className="mt-12 border-t pt-8">
-        <div className="flex gap-6 border-b pb-2 mb-4">
-          <button
-            onClick={() => setActiveTab("description")}
-            className={`font-medium border-b-2 pb-1 ${
-              activeTab === "description"
-                ? "text-green-600 border-green-600"
-                : "text-gray-500 border-transparent hover:text-green-600"
-            }`}
-          >
-            Descriptions
-          </button>
-          <button
-            onClick={() => setActiveTab("additional")}
-            className={`font-medium border-b-2 pb-1 ${
-              activeTab === "additional"
-                ? "text-green-600 border-green-600"
-                : "text-gray-500 border-transparent hover:text-green-600"
-            }`}
-          >
-            Additional Information
-          </button>
-          <button
-            onClick={() => setActiveTab("feedback")}
-            className={`font-medium border-b-2 pb-1 ${
-              activeTab === "feedback"
-                ? "text-green-600 border-green-600"
-                : "text-gray-500 border-transparent hover:text-green-600"
-            }`}
-          >
-            Customer Feedback
-          </button>
+        <div className="flex flex-wrap justify-center items-center gap-6 border-b pb-2 mb-4">
+          {["description", "additional", "feedback"].map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`font-medium border-b-2 pb-1 ${
+                activeTab === tab
+                  ? "text-green-600 border-green-600"
+                  : "text-gray-500 border-transparent hover:text-green-600"
+              } capitalize`}
+            >
+              {tab
+                .replace("description", "Descriptions")
+                .replace("additional", "Additional Information")
+                .replace("feedback", "Customer Feedback")}
+            </button>
+          ))}
         </div>
 
+        {/* Tabs Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {activeTab === "description" && (
             <>
@@ -197,11 +225,11 @@ export default function ProductDetails() {
                 <ul className="space-y-2 text-gray-700">
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="text-green-600" size={18} /> 100%
-                    of fresh leaves
+                    fresh leaves
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="text-green-600" size={18} /> All
-                    organic & natural
+                    <CheckCircle2 className="text-green-600" size={18} />{" "}
+                    Organic & natural
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="text-green-600" size={18} /> Free
@@ -210,29 +238,15 @@ export default function ProductDetails() {
                 </ul>
               </div>
               <div className="flex flex-col gap-4">
-                <div className="rounded-xl overflow-hidden">
+                <div className="rounded-xl overflow-hidden w-full">
                   <iframe
-                    width="560"
-                    height="315"
-                    src="https://www.youtube.com/embed/dFqcE7NP9RQ?si=9kepjETdzIS8RBoE"
+                    className="w-full h-64 sm:h-80 md:h-96"
+                    src="https://www.youtube.com/embed/dFqcE7NP9RQ"
                     title="YouTube video player"
                     frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   ></iframe>
-                </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="border p-4 rounded-xl text-center">
-                    <p className="font-bold text-green-600">69% Discount</p>
-                    <p className="text-xs text-gray-500">Save your money</p>
-                  </div>
-                  <div className="border p-4 rounded-xl text-center">
-                    <p className="font-bold text-green-600">100% Organic</p>
-                    <p className="text-xs text-gray-500">
-                      Fresh organic veggies
-                    </p>
-                  </div>
                 </div>
               </div>
             </>
@@ -266,19 +280,11 @@ export default function ProductDetails() {
               <div className="space-y-4">
                 <div className="border rounded-lg p-4 bg-gray-50">
                   <p className="font-medium">🌟🌟🌟🌟🌟</p>
-                  <p className="text-sm mt-2">
-                    "Very fresh and good quality!"
-                  </p>
+                  <p className="text-sm mt-2">"Very fresh and good quality!"</p>
                 </div>
                 <div className="border rounded-lg p-4 bg-gray-50">
                   <p className="font-medium">🌟🌟🌟🌟</p>
                   <p className="text-sm mt-2">"Nice taste, arrived quickly."</p>
-                </div>
-                <div className="border rounded-lg p-4 bg-gray-50">
-                  <p className="font-medium">🌟🌟🌟</p>
-                  <p className="text-sm mt-2">
-                    "Good, but packaging could be better."
-                  </p>
                 </div>
               </div>
             </div>
@@ -288,7 +294,9 @@ export default function ProductDetails() {
 
       {/* Related Products */}
       <div className="mt-12">
-        <h3 className="text-xl font-bold mb-6">Related Products</h3>
+        <h3 className="text-xl sm:text-2xl font-bold mb-6 text-center">
+          Related Products
+        </h3>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
           {product.related.map((item) => (
             <div
@@ -303,7 +311,7 @@ export default function ProductDetails() {
               <img
                 src={item.image}
                 alt={item.name}
-                className="mx-auto h-32 object-contain mb-3"
+                className="mx-auto h-32 sm:h-36 object-contain mb-3"
               />
               <h4 className="font-medium">{item.name}</h4>
               <p className="text-green-600 font-bold">
