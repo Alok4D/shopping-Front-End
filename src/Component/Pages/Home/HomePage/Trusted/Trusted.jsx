@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Trusted = () => {
   return (
     <section className="bg-white py-16">
-      <div className=" flex flex-col lg:flex-row items-center gap-10 px-4 md:px-6 lg:px-10">
+      <div className="flex flex-col lg:flex-row items-center gap-10 lg:px-0 px-4 md:px-6 container mx-auto">
         {/* Left Images */}
         <div className="flex flex-col sm:flex-row gap-6 w-full lg:w-1/2 justify-center">
           <img

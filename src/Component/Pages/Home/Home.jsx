@@ -14,20 +14,19 @@ const Home = () => {
   return (
     <div>
       <Banner />
-      <div className="container mx-auto">
+    
         <ServiceHighlights />
         <FeatureProduct />
         <TopCategories />
         <Trusted />
-      </div>
+     
       <Review />
       <div className="container mx-auto">
         <CardSection />
         <BestSeller />
-        <LatestNews />
-        <Testimonial />
-        
       </div>
+      <LatestNews />
+      <Testimonial />
       <Contact />
     </div>
   );

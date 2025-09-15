@@ -42,7 +42,7 @@ const products = [
 
 const FeatureProduct = () => {
   return (
-    <div className=" py-12 px-4 md:px-16">
+    <div className="container mx-auto py-12 px-4 lg:px-0 md:px-16">
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-2xl font-semibold">Featured Products</h2>
@@ -54,75 +54,75 @@ const FeatureProduct = () => {
         </Link>
       </div>
 
-      {/* Product Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-        {products.map((product) => (
-          <div
-            key={product.id}
-            className={`relative border rounded-lg p-4 bg-white transition group overflow-hidden hover:shadow-lg ${
-              product.isSelected ? "border-green-500" : "border-gray-200"
-            }`}
-          >
-            {/* Sale badge */}
-            {product.isOnSale && (
-              <div className="absolute top-3 left-3 bg-red-500 text-white text-xs px-2 py-0.5 rounded">
-                Sale 50%
+        {/* Product Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            {products.map((product) => (
+              <div
+                key={product.id}
+                className={`relative border hover:border-[#00B207] rounded-lg p-4 bg-white transition group overflow-hidden hover:shadow-lg ${
+                  product.isSelected ? "hover:border-[#00B207]" : "border-gray-200"
+                }`}
+              >
+                {/* Sale badge */}
+                {product.isOnSale && (
+                  <div className="absolute top-3 left-3 bg-red-500 text-white text-xs px-2 py-0.5 rounded">
+                    Sale 50%
+                  </div>
+                )}
+    
+                {/* Action Icons */}
+                <div className="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition">
+                  <button className="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow hover:bg-green-100">
+                    <FaHeart className="text-gray-600 text-sm" />
+                  </button>
+                  <button className="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow hover:bg-green-100">
+                    <FaEye className="text-gray-600 text-sm" />
+                  </button>
+                </div>
+    
+                {/* Product image */}
+                <div className="w-full h-40 flex justify-center items-center mb-4">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="max-h-full object-contain"
+                  />
+                </div>
+    
+                {/* Product details */}
+                <h4 className="text-sm font-semibold text-gray-800 mb-1">
+                  {product.name}
+                </h4>
+    
+                {/* Pricing */}
+                <div className="text-sm text-gray-700 mb-1">
+                  <span className="font-bold text-black">
+                    ${product.price.toFixed(2)}
+                  </span>{" "}
+                  {product.oldPrice && (
+                    <span className="line-through text-gray-400 ml-1">
+                      ${product.oldPrice.toFixed(2)}
+                    </span>
+                  )}
+                </div>
+    
+                {/* Rating */}
+                <div className="flex items-center gap-1 text-yellow-500 text-xs mb-2">
+                  {Array.from({ length: 5 }, (_, i) => (
+                    <FaStar
+                      key={i}
+                      className={i < product.rating ? "" : "text-gray-300"}
+                    />
+                  ))}
+                </div>
+    
+                {/* Cart Icon */}
+                <div className="absolute bottom-4 right-4 w-8 h-8 flex items-center justify-center bg-gray-200 text-gray-600 rounded-full hover:bg-green-500 hover:text-white transition">
+                  <FaShoppingBag size={14} />
+                </div>
               </div>
-            )}
-
-            {/* Action Icons */}
-            <div className="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition">
-              <button className="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow hover:bg-green-100">
-                <FaHeart className="text-gray-600 text-sm" />
-              </button>
-              <button className="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow hover:bg-green-100">
-                <FaEye className="text-gray-600 text-sm" />
-              </button>
-            </div>
-
-            {/* Product image */}
-            <div className="w-full h-40 flex justify-center items-center mb-4">
-              <img
-                src={product.image}
-                alt={product.name}
-                className="max-h-full object-contain"
-              />
-            </div>
-
-            {/* Product details */}
-            <h4 className="text-sm font-semibold text-gray-800 mb-1">
-              {product.name}
-            </h4>
-
-            {/* Pricing */}
-            <div className="text-sm text-gray-700 mb-1">
-              <span className="font-bold text-black">
-                ${product.price.toFixed(2)}
-              </span>{" "}
-              {product.oldPrice && (
-                <span className="line-through text-gray-400 ml-1">
-                  ${product.oldPrice.toFixed(2)}
-                </span>
-              )}
-            </div>
-
-            {/* Rating */}
-            <div className="flex items-center gap-1 text-yellow-500 text-xs mb-2">
-              {Array.from({ length: 5 }, (_, i) => (
-                <FaStar
-                  key={i}
-                  className={i < product.rating ? "" : "text-gray-300"}
-                />
-              ))}
-            </div>
-
-            {/* Cart Icon */}
-            <div className="absolute bottom-4 right-4 w-8 h-8 flex items-center justify-center bg-gray-200 text-gray-600 rounded-full hover:bg-green-500 hover:text-white transition">
-              <FaShoppingBag size={14} />
-            </div>
+            ))}
           </div>
-        ))}
-      </div>
     </div>
   );
 };

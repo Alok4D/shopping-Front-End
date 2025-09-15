@@ -1,6 +1,5 @@
-
-import { FaStar, FaHeart, FaEye, FaLock, FaShoppingBag } from "react-icons/fa";
-
+import { FaHeart, FaEye, FaShoppingBag, FaLock, FaStar } from "react-icons/fa";
+import bestsellerDiscount from "../../../src/assets/banner-logo/627de77363d3144b88888de997dd16b7dda7316e.jpg";
 const products = [
   {
     id: 1,
@@ -38,14 +37,6 @@ const products = [
     favorite: true,
     viewed: true,
   },
-  {
-    id: 5,
-    name: "Corn",
-    price: 14.99,
-    img: "https://static.vecteezy.com/system/resources/thumbnails/022/935/638/small/top-view-of-single-fresh-green-cucumber-vegetable-isolated-with-clipping-path-and-shadow-in-file-format-png.png",
-    rating: 3.5,
-    locked: true,
-  },
 ];
 
 const hotDeals = [
@@ -53,7 +44,7 @@ const hotDeals = [
     id: 1,
     name: "Green Apple",
     price: 14.99,
-    img: "https://e7.pngegg.com/pngimages/427/117/png-clipart-sweet-potato-illustration-single-potato-food-vegetables.png",
+    img: "https://png.pngtree.com/png-clipart/20240325/original/pngtree-green-apple-fresh-fruit-png-image_14671987.png",
     rating: 4.5,
   },
   {
@@ -124,107 +115,256 @@ const topRated = [
   },
 ];
 
-const StarRating = ({ rating }) => {
-  const stars = [];
-  const fullStars = Math.floor(rating);
-  const halfStar = rating % 1 >= 0.5;
-  for (let i = 0; i < fullStars; i++)
-    stars.push(<FaStar key={i} className="inline text-yellow-400" />);
-  if (halfStar)
-    stars.push(<FaStar key={"half"} className="inline text-yellow-400" />);
-  return <div className="text-sm">{stars}</div>;
-};
+// ⭐ Utility for stars
+const renderStars = (rating) =>
+  Array(5)
+    .fill(0)
+    .map((_, i) => (
+      <span
+        key={i}
+        className={`text-sm ${
+          i < Math.floor(rating) ? "text-yellow-400" : "text-gray-300"
+        }`}
+      >
+        ★
+      </span>
+    ));
 
-const ProductCard = ({ product, big }) => (
-  <div
-    className={`relative border rounded-md p-3 cursor-pointer hover:shadow-lg ${
-      big ? "border-green-500" : "border-gray-200"
-    }`}
-  >
-    <div className="absolute flex gap-2 text-gray-600 top-2 right-2">
-      {product.favorite && <FaHeart />}
-      {product.viewed && <FaEye />}
-      {product.locked && <FaLock />}
-    </div>
-    <img
-      src={product.img}
-      alt={product.name}
-      className={`mx-auto ${big ? "h-28" : "h-20"}`}
-    />
-    <h3 className="mt-2 text-xs font-semibold">{product.name}</h3>
-    <div className="flex items-center justify-between mt-1">
-      <p className="text-xs font-bold">${product.price.toFixed(2)}</p>
-      <StarRating rating={product.rating} />
-    </div>
-  </div>
-);
-
-const BestSeller = () => {
+const BestSellerProducts = () => {
   return (
-    <div className="container px-4 py-8 mx-auto sm:px-6 lg:px-8">
-      <div className="flex items-center justify-between mb-6">
-        <h2 className="text-xl font-bold">Best Seller Products</h2>
-        <a
-          href="#"
-          className="flex items-center gap-1 text-sm text-green-500 hover:underline"
-        >
-          View All <span>→</span>
-        </a>
+    <section className="py-10 lg:px-0 px-6">
+      {/* Header */}
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="text-2xl font-bold">Best Seller Products</h2>
+        <button className="text-green-600 hover:underline">View All →</button>
       </div>
 
-      {/* Top big cards */}
-      <div className="grid grid-cols-1 gap-4 mb-8 sm:grid-cols-5">
+      {/* Product Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
         {products.map((product) => (
-          <ProductCard key={product.id} product={product} big />
+          <div
+            key={product.id}
+            className={`relative border hover:border-[#00B207] rounded-lg p-4 bg-white transition group overflow-hidden hover:shadow-lg ${
+              product.isSelected ? "hover:border-[#00B207]" : "border-gray-200"
+            }`}
+          >
+            {/* Sale badge */}
+            {product.isOnSale && (
+              <div className="absolute top-3 left-3 bg-red-500 text-white text-xs px-2 py-0.5 rounded">
+                Sale 50%
+              </div>
+            )}
+
+            {/* Action Icons */}
+            <div className="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition">
+              <button className="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow hover:bg-green-100">
+                <FaHeart className="text-gray-600 text-sm" />
+              </button>
+              <button className="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow hover:bg-green-100">
+                <FaEye className="text-gray-600 text-sm" />
+              </button>
+            </div>
+
+            {/* Product image */}
+            <div className="w-full h-40 flex justify-center items-center mb-4">
+              <img
+                src={product.img}
+                alt={product.name}
+                className="max-h-full object-contain"
+              />
+            </div>
+
+            {/* Product details */}
+            <h4 className="text-sm font-semibold text-gray-800 mb-1">
+              {product.name}
+            </h4>
+
+            {/* Pricing */}
+            <div className="text-sm text-gray-700 mb-1">
+              <span className="font-bold text-black">
+                ${product.price.toFixed(2)}
+              </span>{" "}
+              {product.oldPrice && (
+                <span className="line-through text-gray-400 ml-1">
+                  ${product.oldPrice.toFixed(2)}
+                </span>
+              )}
+            </div>
+
+            {/* Rating */}
+            <div className="flex items-center gap-1 text-yellow-500 text-xs mb-2">
+              {Array.from({ length: 5 }, (_, i) => (
+                <FaStar
+                  key={i}
+                  className={i < product.rating ? "" : "text-gray-300"}
+                />
+              ))}
+            </div>
+
+            {/* Cart Icon */}
+            <div className="absolute bottom-4 right-4 w-8 h-8 flex items-center justify-center bg-gray-200 text-gray-600 rounded-full hover:bg-green-500 hover:text-white transition">
+              <FaShoppingBag size={14} />
+            </div>
+          </div>
         ))}
       </div>
 
-      {/* Bottom section: lists + offer */}
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-4">
-        {/* Hot Deals */}
-        <div>
-          <h3 className="mb-4 font-semibold">Hot Deals</h3>
-          <div className="space-y-4">
-            {hotDeals.map((item) => (
-              <ProductCard key={item.id} product={item} />
-            ))}
-          </div>
+      {/* Bottom Section */}
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-10">
+      {/* Hot Deals */}
+<div>
+  <h3 className="text-lg font-bold mb-4">Hot Deals</h3>
+  <div className="space-y-4">
+    {hotDeals.map((p) => (
+      <div
+        key={p.id}
+        className="group flex items-center justify-center gap-4 p-3 border border-gray-200 rounded-lg hover:shadow hover:border-[#00B207] transition-colors duration-300"
+      >
+        {/* Product Image */}
+        <div className="w-16 h-16 flex items-center justify-center">
+          <img
+            src={p.img}
+            alt={p.name}
+            className="w-full h-full object-contain"
+          />
         </div>
 
+        {/* Product Info */}
+        <div className="ml-3 flex-1">
+          <p className="font-semibold">{p.name}</p>
+
+          {/* Price + Rating (default visible, hide on hover) */}
+          <div className="transition-all duration-300 group-hover:hidden">
+            <p className="text-green-600 font-bold">${p.price}</p>
+            <div className="flex">{renderStars(p.rating)}</div>
+          </div>
+
+          {/* Hover Actions (show below name on hover) */}
+          <div className="hidden group-hover:flex gap-2 mt-2">
+            <button className="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full hover:bg-green-500 hover:text-white transition">
+              <FaShoppingBag size={14} />
+            </button>
+            <button className="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full hover:bg-green-500 hover:text-white transition">
+              <FaHeart size={14} />
+            </button>
+            <button className="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full hover:bg-green-500 hover:text-white transition">
+              <FaEye size={14} />
+            </button>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+
         {/* Best Seller */}
-        <div>
-          <h3 className="mb-4 font-semibold">Best Seller</h3>
+         <div>
+          <h3 className="text-lg font-bold mb-4">Hot Deals</h3>
           <div className="space-y-4">
-            {bestSellers.map((item) => (
-              <ProductCard key={item.id} product={item} />
+            {bestSellers.map((p) => (
+              <div
+                key={p.id}
+                className="group flex items-center justify-center gap-4 p-3 border rounded-lg hover:shadow relative overflow-hidden hover:border-[#00B207]"
+              >
+                {/* Product Image */}
+                <div className="w-16 h-16 flex items-center justify-center">
+                  <img src={p.img} alt={p.name} className="w-full h-full " />
+                </div>
+
+                {/* Product Info */}
+                <div className="ml-3 flex-1">
+                  <p className="font-semibold">{p.name}</p>
+
+                  {/* Price + Rating (default visible, hide on hover) */}
+                  <div className="transition-all duration-300 group-hover:hidden">
+                    <p className="text-green-600 font-bold">${p.price}</p>
+                    <div className="flex">{renderStars(p.rating)}</div>
+                  </div>
+
+                  {/* Hover Actions (show below name on hover) */}
+                  <div className="hidden group-hover:flex gap-2 mt-2">
+                    <button className="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full hover:bg-green-500 hover:text-white transition">
+                      <FaShoppingBag size={14} />
+                    </button>
+                    <button className="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full hover:bg-green-500 hover:text-white transition">
+                      <FaHeart size={14} />
+                    </button>
+                    <button className="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full hover:bg-green-500 hover:text-white transition">
+                      <FaEye size={14} />
+                    </button>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
 
         {/* Top Rated */}
         <div>
-          <h3 className="mb-4 font-semibold">Top Rated</h3>
+          <h3 className="text-lg font-bold mb-4">Hot Deals</h3>
           <div className="space-y-4">
-            {topRated.map((item) => (
-              <ProductCard key={item.id} product={item} />
+            {topRated.map((p) => (
+              <div
+                key={p.id}
+                className="group flex items-center justify-center gap-4 p-3 border rounded-lg hover:shadow relative overflow-hidden hover:border-[#00B207]"
+              >
+                {/* Product Image */}
+                <div className="w-16 h-16 flex items-center justify-center">
+                  <img src={p.img} alt={p.name} className="w-full h-full " />
+                </div>
+
+                {/* Product Info */}
+                <div className="ml-3 flex-1">
+                  <p className="font-semibold">{p.name}</p>
+
+                  {/* Price + Rating (default visible, hide on hover) */}
+                  <div className="transition-all duration-300 group-hover:hidden">
+                    <p className="text-green-600 font-bold">${p.price}</p>
+                    <div className="flex">{renderStars(p.rating)}</div>
+                  </div>
+
+                  {/* Hover Actions (show below name on hover) */}
+                  <div className="hidden group-hover:flex gap-2 mt-2">
+                    <button className="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full hover:bg-green-500 hover:text-white transition">
+                      <FaShoppingBag size={14} />
+                    </button>
+                    <button className="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full hover:bg-green-500 hover:text-white transition">
+                      <FaHeart size={14} />
+                    </button>
+                    <button className="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full hover:bg-green-500 hover:text-white transition">
+                      <FaEye size={14} />
+                    </button>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
 
-        {/* Offer card */}
-        <div className="flex flex-col items-center justify-center p-6 text-center text-black bg-yellow-400 rounded-lg">
-          <h3 className="mb-3 text-lg font-bold">HOT SALE</h3>
-          <p className="mb-5 text-xl font-bold">Save 37% on Every Order</p>
-          <button className="btn btn-success">Shop Now →</button>
+        {/* Yellow Banner */}
+        <div className="relative h-[355px] w-full bg-yellow-400 rounded-xl overflow-hidden flex flex-col items-center text-center">
+          {/* Content */}
+          <div className="relative z-10 p-6">
+            <h4 className="text-sm font-bold text-black mb-2">HOT SALE</h4>
+            <p className="text-2xl font-extrabold text-black mb-4">
+              Save 37% on Every Order
+            </p>
+            <button className="bg-white text-green-600 px-6 py-2 rounded-full shadow hover:bg-green-100 transition">
+              Shop Now →
+            </button>
+          </div>
+
+          {/* Bottom Image */}
           <img
-            src="https://static.vecteezy.com/system/resources/previews/051/334/740/non_2x/assorted-fresh-vegetables-including-carrots-tomatoes-broccoli-eggplant-cabbage-and-zucchini-showcasing-vibrant-colors-and-healthy-produce-png.png"
-            alt="Offer Fruits"
-            className="object-contain mt-6 max-h-40"
+            src={bestsellerDiscount}
+            alt="Offer"
+            className="absolute bottom-0 w-full object-contain"
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default BestSeller;
+export default BestSellerProducts;

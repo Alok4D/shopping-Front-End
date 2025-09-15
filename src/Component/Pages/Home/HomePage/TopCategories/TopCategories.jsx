@@ -1,20 +1,22 @@
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-// ✅ Import images directly
+
+// Import images
 import vegIcon from "../../../../../assets/sabbirassets/TopCategories/Vegetables.png";
 import fruitIcon from "../../../../../assets/sabbirassets/TopCategories/Fresh Fruit.png";
 import fishIcon from "../../../../../assets/sabbirassets/TopCategories/Fish.png";
 import meatIcon from "../../../../../assets/sabbirassets/TopCategories/meat.png";
 import drinksIcon from "../../../../../assets/sabbirassets/TopCategories/soft-drink 1.png";
-import snacksIcon from "../../../../../assets/sabbirassets/TopCategories/snacks.png"; // 🛠 Make sure this image exists
+import snacksIcon from "../../../../../assets/sabbirassets/TopCategories/snacks.png";
+import dairyIcon from "../../../../../assets/sabbirassets/TopCategories/snacks.png";
+import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
+// import dairyIcon from "../../../../../assets/sabbirassets/TopCategories/dairy.png"; // add dairy image
 
-// ✅ Category data
+// Category data
 const categories = [
   { id: 1, name: "Vegetables", count: 165, icon: vegIcon, isActive: true },
   { id: 2, name: "Fresh Fruit", count: 137, icon: fruitIcon },
@@ -22,12 +24,13 @@ const categories = [
   { id: 4, name: "Meat", count: 165, icon: meatIcon },
   { id: 5, name: "Water and Drinks", count: 48, icon: drinksIcon },
   { id: 6, name: "Snacks", count: 165, icon: snacksIcon },
-  { id: 7, name: "Dairy", count: 80, icon: "" },
+  { id: 7, name: "Dairy", count: 80, icon: dairyIcon },
 ];
 
 const TopCategories = () => {
   return (
-    <div className=" py-12 px-4 md:px-16 bg-white">
+    <section className="w-full bg-gradient-to-b from-[#6de4711a] to-white">
+       <div className="py-12 px-4 lg:px-0 md:px-16 container mx-auto">
       {/* Header */}
       <div className="flex justify-between items-center my-10">
         <h2 className="text-2xl font-semibold">Shop by Top Categories</h2>
@@ -41,9 +44,9 @@ const TopCategories = () => {
 
       {/* Swiper Carousel */}
       <div className="relative">
-        {/* 🟢 Custom Prev Button */}
-        <button className="custom-prev absolute -left-6 top-1/2 -translate-y-1/2 z-10 bg-white border border-green-500 p-2 rounded-full text-green-600 hover:bg-green-100 shadow">
-          <FaChevronLeft />
+        {/* Custom Prev Button */}
+        <button className="custom-prev absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 bg-white border border-green-500 p-2 rounded-full text-green-600 hover:bg-green-100 shadow">
+       <FaArrowLeftLong />
         </button>
 
         <Swiper
@@ -64,11 +67,11 @@ const TopCategories = () => {
           {categories.map((category) => (
             <SwiperSlide key={category.id}>
               <div
-                className={`p-4 border rounded-lg text-center transition ${
-                  category.isActive
-                    ? "border-green-500 bg-green-50"
-                    : "border-gray-200 bg-white"
-                }`}
+                className={`p-4 border rounded-lg text-center transition 
+                  ${category.isActive
+                    ? "border-green-500 bg-green-50" 
+                    : "border-gray-200 bg-white hover:border-green-500 hover:bg-green-50"
+                  }`}
               >
                 <div className="flex justify-center mb-2">
                   <img
@@ -80,20 +83,20 @@ const TopCategories = () => {
                 <h4 className="text-sm font-semibold text-gray-800">
                   {category.name}
                 </h4>
-                <p className="text-xs text-gray-500">
-                  {category.count} Products
-                </p>
+                <p className="text-xs text-gray-500">{category.count} Products</p>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
 
-        {/* 🟢 Custom Next Button */}
-        <button className="custom-next absolute -right-6 top-1/2 -translate-y-1/2 z-10 bg-white border border-green-500 p-2 rounded-full text-green-600 hover:bg-green-100 shadow">
-          <FaChevronRight />
+        {/* Custom Next Button */}
+        <button className="custom-next absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 bg-white border border-green-500 p-2 rounded-full text-green-600 hover:bg-green-100 shadow">
+         <FaArrowRightLong />
         </button>
       </div>
     </div>
+    </section>
+   
   );
 };
 
