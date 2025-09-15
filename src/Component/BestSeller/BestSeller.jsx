@@ -260,7 +260,7 @@ const BestSeller = () => {
 
         {/* Best Seller */}
          <div>
-          <h3 className="text-lg font-bold mb-4">Hot Deals</h3>
+          <h3 className="text-lg font-bold mb-4">Best Seller</h3>
           <div className="space-y-4">
             {bestSellers.map((p) => (
               <div
@@ -302,7 +302,7 @@ const BestSeller = () => {
 
         {/* Top Rated */}
         <div>
-          <h3 className="text-lg font-bold mb-4">Hot Deals</h3>
+          <h3 className="text-lg font-bold mb-4">Top Rated</h3>
           <div className="space-y-4">
             {topRated.map((p) => (
               <div
