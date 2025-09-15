@@ -15,7 +15,7 @@ import footerBg from "../../../../assets/footerImg/541914333_1323336215865136_53
 export default function Footer() {
   return (
     <footer
-      className="w-full bg-[#111111] text-gray-300  relative overflow-hidden mt-8"
+      className="w-full bg-[#111111] text-gray-300  relative overflow-hidden"
       style={{
         backgroundImage: `url(${footerBg})`,
         backgroundSize: "cover",
@@ -23,7 +23,7 @@ export default function Footer() {
       }}
     >
       {/* Main Footer */}
-      <div className="container  mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-10 relative z-10">
+      <div className="container mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-10 relative z-10">
         {/* Logo + About */}
         <div className="md:col-span-1">
           <h2 className="flex items-center gap-2 text-white text-2xl font-bold mb-4">

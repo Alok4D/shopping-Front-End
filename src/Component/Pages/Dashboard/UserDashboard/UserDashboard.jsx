@@ -2,6 +2,7 @@
 import { AiOutlineEye } from "react-icons/ai";
 
 import { Link } from "react-router-dom";
+import userPhoto from '../../../../../src/assets/useDashboardphoto/useprofile/95607d5220df9c482a292e63c6344bd4cf872e28.jpg'
 
 const UserDashboard = () => {
   const orders = [
@@ -53,7 +54,7 @@ const UserDashboard = () => {
             <div className="  flex flex-col items-center text-center">
               <div className="avatar">
                 <div className="w-24 rounded-full">
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMFT__mSaXJA1VDapfRw50WaFEQimQ9T_DrA&s" alt="Profile" />
+                  <img src={userPhoto} alt="Profile" />
                 </div>
               </div>
               <h3 className="text-xl font-medium mt-2">Dianne Russell</h3>

@@ -26,8 +26,9 @@ const Home = () => {
         <BestSeller />
         <LatestNews />
         <Testimonial />
-        <Contact />
+        
       </div>
+      <Contact />
     </div>
   );
 };

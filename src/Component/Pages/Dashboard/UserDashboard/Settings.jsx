@@ -1,5 +1,6 @@
 import  { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import userPhoto from '../../../../../src/assets/useDashboardphoto/useprofile/95607d5220df9c482a292e63c6344bd4cf872e28.jpg'
 
 const Settings = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -51,7 +52,7 @@ const Settings = () => {
           </div>
           <div className="flex flex-col items-center justify-center">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMFT__mSaXJA1VDapfRw50WaFEQimQ9T_DrA&s"
+              src={userPhoto}
               alt="Profile"
               className="w-24 h-24 rounded-full mb-4"
             />
