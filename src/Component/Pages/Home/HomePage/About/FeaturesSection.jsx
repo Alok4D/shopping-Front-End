@@ -1,5 +1,3 @@
-
-
 import {
   FaLeaf,
   FaShippingFast,
@@ -9,16 +7,15 @@ import {
   FaCube,
 } from "react-icons/fa";
 
-import farmer3 from "../../../../../assets/sabbirassets/about/BG (2).png"; 
-import farmer4 from "../../../../../assets/sabbirassets/about/Image (7).png"; 
+import farmer3 from "../../../../../assets/sabbirassets/about/BG (2).png";
+import farmer4 from "../../../../../assets/sabbirassets/about/Image (7).png";
 
 const FeaturesSection = () => {
   return (
-    <div className="container grid items-center gap-10 px-5 py-10 mx-auto md:grid-cols-2 md:px-20 bg-base-100">
-      
+    <div className="">
+        <div className="container mx-auto grid items-center gap-10 py-5  md:grid-cols-2  bg-base-100">
       {/* Left Image Area */}
       <div className="relative flex items-center justify-center w-full h-full">
-        
         {/* Background Image */}
         <img
           src={farmer3}
@@ -47,7 +44,7 @@ const FeaturesSection = () => {
         </p>
 
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-       {/* Feature 1 */}
+          {/* Feature 1 */}
           <div className="flex items-center space-x-4">
             <div className="p-3 text-base text-green-500 bg-green-100 rounded-full">
               <FaLeaf />
@@ -123,6 +120,8 @@ const FeaturesSection = () => {
         </div>
       </div>
     </div>
+    </div>
+  
   );
 };
 

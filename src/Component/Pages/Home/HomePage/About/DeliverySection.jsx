@@ -4,8 +4,8 @@ import { FaCheckCircle } from "react-icons/fa";
 
 const DeliverySection = () => {
   return (
-    <div className="container grid items-center gap-10 px-5 py-10 mx-auto md:grid-cols-2 md:px-20">
-      <div className="md:px-10 ">
+    <div className="container grid items-center gap-10  py-10 mx-auto md:grid-cols-2 ">
+      <div className="">
         <h2 className="mb-4 text-3xl font-bold">
           We Delivered, You <br />{" "}
           <span className="text-green-600">Enjoy Your Order.</span>
@@ -38,7 +38,7 @@ const DeliverySection = () => {
           </button>
         </Link>
       </div>
-      <div className="max-w-md mt-6  md:mt-0">
+      <div className=" mt-4  md:mt-0">
         <img
           src={deliveryGuy}
           alt="Farmer with vegetables"

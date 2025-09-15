@@ -7,21 +7,21 @@ import RobertFox from '../../../../../assets/sabbirassets/about/Robert Fox.png'
 
 const TeamMate = () => {
   return (
-    <section className="bg-gray-50 py-14 px-5 md:px-20 text-center relative">
+    <section className="bg-gray-50 py-14 px-5  text-center relative">
       <h2 className="text-3xl font-bold mb-2">Our Awesome Team</h2>
       <p className="text-gray-600 mb-12 max-w-xl mx-auto text-sm">
         Pellentesque a ante vulputate leo porttitor luctus sed eget eros. Nulla
         et rhoncus neque. Duis non diam eget est luctus tincidunt a a mi.
       </p>
 
-      <div className="relative max-w-7xl mx-auto flex items-center justify-center">
+      <div className="relative container mx-auto flex items-center justify-center">
         {/* Left Arrow */}
         <button className="custom-prev absolute -left-6 top-1/2 transform -translate-y-1/2 z-10 bg-white border border-green-500 p-3 rounded-full text-green-600 hover:bg-green-100 shadow">
           <FaChevronLeft />
         </button>
 
         {/* Static Team Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 w-full max-w-5xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 w-full ">
           {/* Card 1 */}
           <div className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer">
             <div className="relative group">

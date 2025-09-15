@@ -14,7 +14,7 @@ const About = () => {
         <DeliverySection></DeliverySection>
         <TeamMate></TeamMate>
         <ClientTestimonial></ClientTestimonial>
-        <LatestNews></LatestNews>
+      
       </>
     );
 };
