@@ -1,4 +1,5 @@
 
+import { Helmet } from "react-helmet-async";
 import { AiOutlineEye, AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import { Link } from "react-router-dom";
 const OrderHistory = () => {
@@ -80,9 +81,10 @@ const OrderHistory = () => {
   return (
     <>
       <div className=" rounded-lg shadow p-6 w-full">
+        <Helmet><title>Dashboard | Order-history</title></Helmet>
         <h2 className="text-xl font-bold mb-6">Order History</h2>
 
-        {/* অর্ডার টেবিল */}
+      
         <div className="overflow-x-auto">
           <table className="table-auto w-full text-left whitespace-nowrap">
             <thead>

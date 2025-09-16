@@ -1,9 +1,13 @@
+import { Helmet } from "react-helmet-async";
 import { FaFacebookF, FaTwitter, FaPinterest,  } from "react-icons/fa";
 import { IoMdCloseCircle } from "react-icons/io";
 
 function Wishlist() {
   return (
     <div className="container mx-auto p-6">
+      <Helmet>
+        <title>Dashboard | Wishlist</title>
+      </Helmet>
       <h1 className="text-3xl font-semibold mb-6 text-center">My Wishlist</h1>
 
       {/* Table Structure */}

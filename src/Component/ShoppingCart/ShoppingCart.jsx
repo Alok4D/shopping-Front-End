@@ -1,9 +1,13 @@
+import { Helmet } from "react-helmet-async";
 import { FaMinus, FaPlus, FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 function ShoppingCart() {
   return (
     <div className="container mx-auto p-6">
+      <Helmet>
+        <title>Dashboard | Cart</title>
+      </Helmet>
       <h1 className="text-3xl font-semibold mb-6 text-center">My Shopping Cart</h1>
 
       {/* Cart Items Section */}

@@ -51,7 +51,7 @@ const hotDeals = [
     id: 6,
     name: "Indian Malta",
     price: 9.99,
-    img: "https://img.freepik.com/premium-photo/close-up-tomatoes-against-white-background_1048944-1411776.jpg?semt=ais_incoming&w=740&q=80",
+    img: "https://5.imimg.com/data5/AG/MU/MY-43969551/indian-malta.png",
     rating: 4,
     favorite: true,
     viewed: true,
@@ -70,7 +70,7 @@ const bestSellers = [
     id: 7,
     name: "Eggplant",
     price: 14.99,
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8tTwvPkVqAQsPIOcaHJHUFIf69_JCrXyT5w&s",
+    img: "https://imagineadama.com/wp-content/uploads/2020/11/product-packshot-aubergine.jpg",
     rating: 4.5,
   },
   {
@@ -78,7 +78,7 @@ const bestSellers = [
     name: "Red Capsicum",
     price: 14.99,
     oldPrice: 20.99,
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrJOjI4eO-SW07S7bU_zgc5mnXl0n8Rm9jBQ&s",
+    img: "https://lavendersuperstore.com.bd/public/uploads/all/maUeg3Rlu07sEl3CBEMpWAOWf7Z2wF8P11oUG4vd.webp",
     rating: 4,
   },
   {
@@ -95,7 +95,7 @@ const topRated = [
     id: 10,
     name: "Big Potatos",
     price: 14.99,
-    img: "https://thumbs.dreamstime.com/b/single-green-oblong-vegetable-white-surface-sunlit-366407449.jpg",
+    img: "https://www.bigfresh.ae/uploads/items/18062023071440_28420_2.JPG?q=50",
     rating: 4.5,
   },
   {
@@ -103,7 +103,7 @@ const topRated = [
     name: "Corn",
     price: 14.99,
     oldPrice: 20.99,
-    img: "https://st5.depositphotos.com/38944626/63890/i/450/depositphotos_638907844-stock-photo-ripe-green-broccoli-cabbage-isolated.jpg",
+    img: "https://www.shutterstock.com/image-photo/fresh-corn-isolated-on-white-600nw-2567133877.jpg",
     rating: 4,
   },
   {
@@ -345,7 +345,7 @@ const BestSeller = () => {
         {/* Yellow Banner */}
         <div className="relative h-[355px] w-full bg-yellow-400 rounded-xl overflow-hidden flex flex-col items-center text-center">
           {/* Content */}
-          <div className="relative z-10 p-6">
+          <div className="relative z-10 pt-14">
             <h4 className="text-sm font-bold text-black mb-2">HOT SALE</h4>
             <p className="text-2xl font-extrabold text-black mb-4">
               Save 37% on Every Order
@@ -359,7 +359,7 @@ const BestSeller = () => {
           <img
             src={bestsellerDiscount}
             alt="Offer"
-            className="absolute bottom-0 w-full object-contain"
+            className="absolute bottom-0 w-full object-cover"
           />
         </div>
       </div>

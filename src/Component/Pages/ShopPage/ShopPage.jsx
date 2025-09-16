@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import ProductGrid from "../../ProductGrid/ProductGrid";
 import Sidebar from "../../Sidebar/Sidebar";
+import { Helmet } from "react-helmet-async";
 
 
 export default function ShopPage() {
@@ -74,6 +75,9 @@ export default function ShopPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 p-6">
+      <Helmet>
+        <title>Ecobazar | Shops</title>
+      </Helmet>
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6">
         <Sidebar products={products} filters={filters} setFilters={setFilters} />
 

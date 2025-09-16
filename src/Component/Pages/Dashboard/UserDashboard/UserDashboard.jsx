@@ -3,6 +3,7 @@ import { AiOutlineEye } from "react-icons/ai";
 
 import { Link } from "react-router-dom";
 import userPhoto from '../../../../../src/assets/useDashboardphoto/useprofile/95607d5220df9c482a292e63c6344bd4cf872e28.jpg'
+import { Helmet } from "react-helmet-async";
 
 const UserDashboard = () => {
   const orders = [
@@ -47,9 +48,12 @@ const UserDashboard = () => {
   return (
     <>
       <div className="flex flex-col gap-4">
-        {/* প্রোফাইল এবং বিলিং এরিয়া */}
+        <Helmet>
+          <title>Dashboard | Profile</title>
+        </Helmet>
+      
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {/* প্রোফাইল কার্ড */}
+         
           <div className="  rounded-lg shadow p-6">
             <div className="  flex flex-col items-center text-center">
               <div className="avatar">

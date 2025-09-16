@@ -352,7 +352,7 @@ const Banner = () => {
 
   return (
     <div className="w-full relative  bg-[#f8fff9]">
-      <div className="container mx-auto lg:h-[620px] relative">
+      <div className="container mx-auto lg:h-[600px] relative">
         <Swiper
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           modules={[Autoplay, Navigation, Pagination]}

@@ -1,6 +1,7 @@
 import  { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import userPhoto from '../../../../../src/assets/useDashboardphoto/useprofile/95607d5220df9c482a292e63c6344bd4cf872e28.jpg'
+import { Helmet } from "react-helmet-async";
 
 const Settings = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -9,6 +10,7 @@ const Settings = () => {
 
   return (
     <div className=" rounded-lg w-full">
+      <Helmet><title>  Dashboard | Setting</title></Helmet>
       {/* Account Settings Section */}
       <div className="bg-white rounded-lg shadow p-6 mb-6">
         <h2 className="text-lg font-bold mb-6">Account Settings</h2>

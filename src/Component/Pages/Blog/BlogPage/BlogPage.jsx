@@ -8,10 +8,14 @@ import blogImage5 from "../../../../../src/assets/blogsImage/Image (5).png";
 import blogImage6 from "../../../../../src/assets/blogsImage/Image (6).png";
 import blogImage7 from "../../../../../src/assets/blogsImage/Image (7).png";
 import blogImage8 from "../../../../../src/assets/blogsImage/Image (8).png";
+import { Helmet } from "react-helmet-async";
 
 const BlogPage = () => {
   return (
     <div className="container mx-auto py-6">
+      <Helmet>
+        <title>Ecobazar | Blog</title>
+      </Helmet>
     <div className="flex flex-col sm:flex-row justify-between items-center mb-4 px-4 sm:px-0">
   {/* Left Section: Sort By */}
   <div className="w-full sm:w-1/2 lg:w-1/4 mb-4 sm:mb-0">
@@ -101,6 +105,14 @@ const BlogPage = () => {
           />
           <BlogCard
             image={blogImage8}
+            category="Food"
+            title="Vegan Recipes for Beginners"
+            description="Are you new to veganism? Here are some simple and delicious vegan recipes that everyone will love!"
+            date="11 Nov"
+            comments="52"
+          />
+          <BlogCard
+            image='https://www.macspharmacy.com/wp-content/uploads/2019/08/vegetables.jpg'
             category="Food"
             title="Vegan Recipes for Beginners"
             description="Are you new to veganism? Here are some simple and delicious vegan recipes that everyone will love!"
